@@ -19,22 +19,15 @@
 	
 	NSImage *normalSMIcon = [NSImage imageNamed:@"SMIcon"];
 	
-	if (normalSMIcon)
-	{
-		NSImage *highlightedSMIcon = [NSImage imageNamed:@"SMIcon-disabled"];
-		
-		if (!highlightedSMIcon)
-			highlightedSMIcon = [self menuImage:normalSMIcon createHighlighted:YES isSMIcon:YES];
-		
-		[statusItem setImage:[self menuImage:normalSMIcon createHighlighted:YES isSMIcon:YES]];
-		[statusItem setAlternateImage:highlightedSMIcon];
-	}
-	else
-	{
-		[statusItem setTitle:@"VB"];
-	}
-	
-	[statusItem setHighlightMode:YES];
+    if (normalSMIcon)
+    {
+        [statusItem setImage: normalSMIcon];
+        normalSMIcon.template = YES;
+    }
+    else
+    {
+        [statusItem setTitle:@"VB"];
+    }
 	
 	vmMenuItems = [[NSMutableArray alloc] init];
 	
@@ -323,7 +316,7 @@
 				if (!error)
 					machineNodes = [settingsXML nodesForXPath:@"./VirtualBox/Machine" error:&error];
 				else
-					break;
+					continue;
 				
 				if (!error)
 				{
@@ -464,7 +457,7 @@
 		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Failed to open VirtualBox settings file", nil) defaultButton:NSLocalizedString(@"OK", nil) alternateButton:nil otherButton:nil informativeTextWithFormat:[error localizedDescription]];
 		[alert runModal];
-		[NSApp terminate:self];
+//        [NSApp terminate:self];
 	}
 }
 
