@@ -5,7 +5,9 @@ on:
     # Ignore pushes to 'v*' tags. Those get built by release
     tags-ignore:
       - 'v*'
-
+    branches:
+      - '*'
+      
 jobs:
   build:
     name: Build
