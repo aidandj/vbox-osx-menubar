@@ -19,3 +19,11 @@ You can configure VMs to run in headless mode from the sub-menu:
 * Remove optimization (couldn't find file)
 * Release a binary
 * Add license
+
+## Error on opening
+
+There is a good chance you will get an error like the one below
+
+![catalina-error](screenshots/osx-catalina-error.png)
+
+To bypass this, hold <kbd>⌃ Control</kbd> and click on the `VirtualBox Menulet.app` item. Then select `Open`, and the click `Open` again in the file dialog.

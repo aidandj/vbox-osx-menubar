@@ -2,7 +2,9 @@ name: CI
 
 on: 
   push:
-
+    # Ignore pushes to 'v*' tags. Those get built by release
+    tags-ignore:
+      - 'v*'
 
 jobs:
   build:
