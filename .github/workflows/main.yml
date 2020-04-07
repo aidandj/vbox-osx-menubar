@@ -1,6 +1,8 @@
 name: CI
 
-on: push
+on: 
+  push:
+
 
 jobs:
   build:
@@ -13,7 +15,9 @@ jobs:
         run: |
           xcodebuild -project VirtualBox\ Menulet.xcodeproj
       - name: Package
-        run: zip VirtualBoxMenulet.zip build/Release/VirtualBox\ Menulet.app
+        run: |
+          cd build/Release/
+          zip -r ../../VirtualBoxMenulet.zip VirtualBox\ Menulet.app
       - uses: actions/upload-artifact@v1
         with:
           name: VirtualBoxMenulet
