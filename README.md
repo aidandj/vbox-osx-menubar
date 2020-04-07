@@ -12,3 +12,10 @@ You can configure VMs to run in headless mode from the sub-menu:
 ![dropdown-shot](screenshots/headless.png)
 
 [0]: https://sourceforge.net/projects/statusmenus/
+
+## aidandj updates
+
+* Update for MacOS 10.15
+* Remove optimization (couldn't find file)
+* Release a binary
+* Add license
