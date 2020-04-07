@@ -20,6 +20,16 @@ You can configure VMs to run in headless mode from the sub-menu:
 * Release a binary
 * Add license
 
+## How to run at startup
+
+1. Move the `VirtualBox Menulet.app` out of your downloads folder. (I put it in `Applications/Utilities`)
+2. Open System Preferences
+3. Open `Users & Groups`
+4. Select your user
+5. Click on `Login Items`
+6. Click on the `+` icon
+7. Navigate to `VirtualBox Menulet.app` and select it
+
 ## Error on opening
 
 There is a good chance you will get an error like the one below
