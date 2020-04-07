@@ -12,7 +12,9 @@ jobs:
       - name: Build
         run: |
           xcodebuild -project VirtualBox\ Menulet.xcodeproj
+      - name: Package
+        run: zip VirtualBoxMenulet.zip build/Release/VirtualBox\ Menulet.app
       - uses: actions/upload-artifact@v1
         with:
           name: Built_App
-          path: build/Release/VirtualBox\ Menulet.app
+          path: VirtualBoxMenulet.zip
