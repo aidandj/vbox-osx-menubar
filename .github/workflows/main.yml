@@ -1,0 +1,28 @@
+name: CI
+
+on: 
+  push:
+    # Ignore pushes to 'v*' tags. Those get built by release
+    tags-ignore:
+      - 'v*'
+    branches:
+      - '*'
+      
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build
+        run: |
+          xcodebuild -project VirtualBox\ Menulet.xcodeproj
+      - name: Package
+        run: |
+          cd build/Release/
+          zip -r ../../VirtualBoxMenulet.zip VirtualBox\ Menulet.app
+      - uses: actions/upload-artifact@v1
+        with:
+          name: VirtualBoxMenulet
+          path: VirtualBoxMenulet.zip
