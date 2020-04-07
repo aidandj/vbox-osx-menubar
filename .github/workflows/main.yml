@@ -16,5 +16,5 @@ jobs:
         run: zip VirtualBoxMenulet.zip build/Release/VirtualBox\ Menulet.app
       - uses: actions/upload-artifact@v1
         with:
-          name: Built_App
+          name: VirtualBoxMenulet
           path: VirtualBoxMenulet.zip
